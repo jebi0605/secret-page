@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+	<meta name="keyword" content="html,ayang,secret page,비밀 페이지">
+	<meta name="description" content="아양이가 만든 페이지of2">
+	<meta name="author" content="아양">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>The secret</title>
+	<style>
+	body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            font-weight: bold;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        .form-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .hidden {
+            display: none;
+        }
+	</style>
+</head>
+<body>
+	<div class="header">secret_page@0605</div>
+	
+	<div class="form-container">
+        <label for="codeInput">type the secret code:</label><br><br>
+        <input type="text" id="codeInput" placeholder="type code in here">
+        <button onclick="checkCode()">check</button>
+    </div>
+	<div id="resultMessage" class="hidden">
+        <h1>The secret</h1>
+        <p>this is the scret page</p>
+        <p>Made in<br><strong>Ayang studio</strong></p>
+    </div>
+	<script>
+        function checkCode() {
+            const input = document.getElementById('codeInput').value;
+            const validCode = "secret page";
+            
+            if (input === validCode) {
+                document.querySelector('.form-container').classList.add('hidden');
+                document.getElementById('resultMessage').classList.remove('hidden');
+				alert("code is corret.you are luck");
+            } else {
+                alert("code is wrong.try again");
+            }
+        }
+    </script>
+</body>
+</html>
